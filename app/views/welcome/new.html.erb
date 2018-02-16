@@ -1,0 +1,17 @@
+<h1> You are here </h1>
+
+<%= form_with scope: :welcome, url: welcome_index_path, local: true do |form| %>
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_field :text %>
+  </p>
+
+  <p>
+    <%= form.label :number %><br>
+    <%= form.text_field :number %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
