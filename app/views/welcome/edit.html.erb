@@ -1,0 +1,17 @@
+<h1> some form here </h1>
+
+<%= form_with model: @welcome, local: true do |form| %>
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_field :text %>
+  </p>
+
+  <p>
+    <%= form.label :number %><br>
+    <%= form.text_field :number %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

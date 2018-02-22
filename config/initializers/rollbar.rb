@@ -2,13 +2,12 @@ Rollbar.configure do |config|
   # Without configuration, Rollbar is enabled in all environments.
   # To disable in specific environments, set config.enabled=false.
 
-  config.access_token = 'd256bcfa9ce84e448f1346ca6a578010'
-  config.endpoint = 'https://devbox/api/1/'
-  config.verify_ssl_peer = false
+  config.access_token = '2220d6691c7b4bf4ad90c4644edb4dc6'
+  # config.verify_ssl_peer = false
 
   # Here we'll disable in 'test':
   # if Rails.env.test?
-  #   config.enabled = false
+    # config.enabled = false
   # end
   config.enabled = true
 
@@ -19,10 +18,10 @@ Rollbar.configure do |config|
   # By default, Rollbar will try to call the `current_user` controller method
   # to fetch the logged-in user object, and then call that object's `id`,
   # `username`, and `email` methods to fetch those properties. To customize:
-  config.person_method = "current_user_override"
-  config.person_id_method = "get_id"
-  config.person_username_method = "get_username"
-  config.person_email_method = "primary_email"
+  # config.person_method = "current_user_override"
+  # config.person_id_method = "get_id"
+  # config.person_username_method = "get_username"
+  # config.person_email_method = "primary_email"
 
   # If you want to attach custom data to all exception and message reports,
   # provide a lambda like the following. It should return a hash.
@@ -72,14 +71,18 @@ Rollbar.configure do |config|
   # environment variable like this: `ROLLBAR_ENV=staging`. This is a recommended
   # setup for Heroku. See:
   # https://devcenter.heroku.com/articles/deploying-to-a-custom-rails-environment
-  config.environment = ENV['ROLLBAR_ENV'].presence || Rails.env
+  # config.environment = ENV['ROLLBAR_ENV'].presence || Rails.env
 
-  config.js_enabled = true
-  config.js_options = {
-    accessToken: "7810377281b243558cd52b0af01d418f",
-    captureUncaught: true,
-    payload: {
-      environment: "production"
-    }
-  }
+  # config.scrub_fields |= [:'message']
+  # config.scrub_fields = [:'request.request_id', :'body.message.extra.body.other']
+  # config.scrub_headers = [:Connection]
+
+  # config.js_enabled = true
+  # config.js_options = {
+  #   accessToken: "7810377281b243558cd52b0af01d418f",
+  #   captureUncaught: true,
+  #   payload: {
+  #     environment: "production"
+  #   }
+  # }
 end
