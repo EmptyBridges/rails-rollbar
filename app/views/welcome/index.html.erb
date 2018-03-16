@@ -7,6 +7,7 @@
 var _rollbarConfig = {
 //   // ajtran
   accessToken: '7810377281b243558cd52b0af01d418f',
+  enabled: false,
 //   // antjaytran
 //   accessToken: 'ec1b5c5b52c647849a5341950166b46f',
 //   ignoredMessages : [//"something",
@@ -19,7 +20,10 @@ var _rollbarConfig = {
 //                      // "Unexpected token <",
 //                      // "ahhhh why cant i get this to work"
 //                     ],
-//   autoInstrument: true,
+  autoInstrument: true,
+  // networkResponseHeaders: true,
+  // networkResponseBody: true,
+  // networkRequestBody: true,
   captureUncaught: true,
   // scrubFields: false,
   scrubFields: ["somethingelse", "dude"],
