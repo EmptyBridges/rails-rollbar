@@ -2,32 +2,14 @@ require "cancan.rb"
 
 class WelcomeController < ApplicationController
     def index
-        # Rollbar.error("yo yo yo")
-        # scope = {}
-        # new_config = {:scrub_fields => [:_railbar_session,:_csrf_token,:controller]}
-        # Rollbar.scoped(scope, new_config) do
-        #     Rollbar.error("hello")
-        # end
-        # cancan = CanCan.new()
-        # raise CanCan::AccessDenied
-        # raise "CanCan::AccessDenied"
     end
 
     def new
         @welcome = Welcome.new
-        # Rollbar.error("hello")
-        # scope = {:person => {:id => '1',
-        #                      :username => 'wazzzup',
-        #                      :email => 'noemails@email.com'}}
-        # new_config = {endpoint: 'https://devbox/api/1/',
-        #               verify_https: false}
-        # Rollbar.scoped(scope, new_config) do
-        #     begin
-        #         Rollbar.error('I am a live.')
-        #     rescue => e
-        #         Rollbar.error(e)
-        #     end
-        # end
+        notifier = Rollbar.scope({
+            :environment => "production"
+        })
+        notifier.error("hello testing uyser")
     end
 
     def edit

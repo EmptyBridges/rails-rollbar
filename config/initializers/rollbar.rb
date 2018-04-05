@@ -19,16 +19,22 @@ Rollbar.configure do |config|
   }
 
   # config.person_method = "current_user"
-  # config.person_id_method = "get_id"
+  # config.person_id_method = "current_user.id"
   # config.person_username_method = "get_username"
-  # config.person_email_method = "get_email"
+  # config.person_email_method = "current_user.email"
 
-  config.exception_level_filters.merge!({
-    "CanCan" => "ignore"
-  })
+  # config.exception_level_filters.merge!({
+  #   "CanCan" => "ignore"
+  # })
+
+  handler = proc do |options|
+    payload = options[:payload]
+
+    payload['data']['person']['id'] = 'auth123'
+  end
+
+  config.transform << handler
 
   config.scrub_fields |= [:_railbar_session, :_csrf_token, :controller]
-  # config.scrub_headers = [:Connection]
-
 
 end
