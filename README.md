@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+git clone
+change access tokens in rollbar.rb
+make sure ruby is installed ruby -v. I'm using ruby 2.3.3p222.
+make sure rails is installed rails -v. I'm using Rails 5.1.6.
+install dependencies: bundle install
 
-Things you may want to cover:
+if you are getting an ffi error.. try following this -> https://github.com/ffi/ffi/issues/608
+which says to add `gem 'ffi', '1.9.18'`
 
-* Ruby version
+and then `bundle update ffi`
 
-* System dependencies
+you may also have to install mysql
+`brew install mysql`
 
-* Configuration
+... errors with openssl. like wha..
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+create database: rake db:create
+run migrations: rake db:migrate
+create routes: rake routes
+run server: rails s
+navigate to: http://localhost:3000/
